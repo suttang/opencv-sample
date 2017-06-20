@@ -1,0 +1,22 @@
+---
+version: '2'
+
+
+services:
+  # ===================================================================
+  # Applications
+  # ===================================================================
+  opencv-app:
+    build: .
+    image: opencv-app
+    container_name: opencv-app
+    volumes:
+      - ./app:/usr/src/app
+    working_dir: /usr/src/app
+
+  simplecv-app:
+    image: sightmachine/simplecv
+    container_name: simplecv-app
+    volumes:
+      - ./app:/usr/src/app
+    working_dir: /usr/src/app
